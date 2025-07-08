@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="main-container">
+        <button id="backBtn" class="back-button">Back</button>
+
+        <div class="form-container fade-in">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <div class="input-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="input-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+
+            <!-- OAuth Sign-In Buttons -->
+            <div class="oauth-buttons">
+                <button id="googleSignIn">
+                    <img src="google.svg" alt="Google" class="oauth-icon">
+                    Sign in with Google
+                </button>
+                <button id="microsoftSignIn">
+                    <img src="microsoft.svg" alt="Microsoft" class="oauth-icon">
+                    Sign in with Microsoft
+                </button>
+                <button id="appleSignIn">
+                    <img src="apple.svg" alt="Apple" class="oauth-icon">
+                    Sign in with Apple ID
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('backBtn').addEventListener('click', function () {
+            window.location.href = 'index.html';
+        });
+
+        function closePage() {
+            window.location.href = 'index.html'; // Redirects to the main page
+        }
+
+        // Placeholder for Google Sign-In
+        document.getElementById('googleSignIn').addEventListener('click', function () {
+            googleLogin();
+        });
+
+        // Placeholder for Microsoft Sign-In
+        document.getElementById('microsoftSignIn').addEventListener('click', function () {
+            microsoftLogin();
+        });
+
+        // Placeholder for Apple Sign-In
+        document.getElementById('appleSignIn').addEventListener('click', function () {
+            appleLogin();
+        });
+
+        function googleLogin() {
+            window.location.href = 'https://accounts.google.com/o/oauth2/auth?client_id=YOUR_GOOGLE_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=token&scope=email profile';
+        }
+
+        function microsoftLogin() {
+            window.location.href = 'https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=YOUR_MICROSOFT_CLIENT_ID&response_type=token&redirect_uri=YOUR_REDIRECT_URI&response_mode=query&scope=openid email profile';
+        }
+
+        function appleLogin() {
+            window.location.href = 'https://appleid.apple.com/auth/authorize?client_id=YOUR_APPLE_CLIENT_ID&redirect_uri=YOUR_REDIRECT_URI&response_type=token&scope=email name';
+        }
+
+        // Local storage login
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+
+            const user = users.find(user => user.email === email && user.password === password);
+
+            if (user) {
+                alert(`Welcome back, ${user.name}!`);
+            } else {
+                alert('Invalid login credentials.');
+            }
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>

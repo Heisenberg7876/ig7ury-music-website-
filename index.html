@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ig7ury</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="logo">
+            <img src="logo.svg" alt="ig7ury Logo">
+        </div>
+        <nav class="nav-menu">
+            <ul>
+                <li class="dropdown">
+                    <a href="#">Trending Songs <span class="dropdown-arrow">&#9662;</span></a>
+                    <div class="dropdown-content">
+                        <a href="top50_alltime.html">Top 50 All-Time</a>
+                        <a href="top50_punjabi.html">Top 50 Punjabi</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">New Songs <span class="dropdown-arrow">&#9662;</span></a>
+                    <div class="dropdown-content">
+                        <a href="top50_alltime.html">Top 50 All-Time</a>
+                        <a href="top50_hindi.html">Top 50 Hindi</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search Artists, Songs, Albums">
+        </div>
+        <div class="user-options">
+            <a href="login.html" class="btn">Login</a>
+            <a href="signup.html" class="btn signup">Sign Up</a>
+        </div>
+    </header>
+
+    <!-- Carousel -->
+    <section class="main-carousel">
+        <div class="carousel-container">
+            <div class="carousel-item active">
+                <a href="banner1.html"><img src="banner1.jpg" alt="Banner 1"></a>
+            </div>
+            <div class="carousel-item">
+                <a href="banner2.html"><img src="banner2.jpg" alt="Banner 2"></a>
+            </div>
+        </div>
+        <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+        <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+    </section>
+
+    <!-- Subscription Banner -->
+    <section class="subscription-banner">
+        <div class="subscription-content">
+            <h2>Get 1 Month Trial for just ₹1</h2>
+            <a href="free.html" class="start-trial btn">Start Trial Now!</a>
+        </div>
+    </section>
+
+    <!-- Top Charts Section -->
+    <section class="top-charts">
+        <h2>Top Charts</h2>
+        <div class="charts-grid">
+            <div class="chart-item">
+                <a href="top50_alltime.html">
+                    <img src="top50_alltime.jpg" alt="All-Time Top 50">
+                    <h3>All-Time Top 50</h3>
+                </a>
+            </div>
+            <div class="chart-item">
+                <a href="top50_punjabi.html">
+                    <img src="top50_punjabi.jpg" alt="Punjabi Top 50">
+                    <h3>Punjabi Top 50</h3>
+                </a>
+            </div>
+            <div class="chart-item">
+                <a href="top50_hindi.html">
+                    <img src="top50_hindi.jpg" alt="Hindi Top 50">
+                    <h3>Hindi Top 50</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Releases Sidebar -->
+    <aside class="new-releases">
+        <h2>New Releases</h2>
+        <ul>
+            <li><a href="#">Stree 2</a></li>
+            <li><a href="#">Dil Mera (From "Shakhot")</a></li>
+        </ul>
+    </aside>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
